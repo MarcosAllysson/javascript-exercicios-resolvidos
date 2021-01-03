@@ -1,0 +1,31 @@
+<!-- 2. Crie um elemento HTML cujo texto seja modificado quando o cursor do mouse está sobre ele e 
+volte ao texto original quando o cursor não estiver mais. -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Questão 2</title>
+</head>
+
+<script>
+    function mOver(obj) { 
+        obj.innerHTML = "Texto antes"
+    }
+
+    function mOut(obj) {
+        obj.innerHTML = "Texto depois"
+    }
+</script>
+
+<body>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)">
+        Passe o mouse em mim
+    </div>
+
+</body>
+
+</html>

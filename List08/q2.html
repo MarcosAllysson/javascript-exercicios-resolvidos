@@ -1,0 +1,38 @@
+<!-- 4. Crie uma página HTML contendo um div e um botão. Faça com que, cada vez que o botão for clicado, 
+um novo parágrafo seja adicionado contendo um texto diferente. (Os possíveis textos podem vir, por exemplo, 
+de um array, em que a cada clique é lido o próximo elemento do array). -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
+
+    <script>
+        let p = ['a', 'b', 'c', 'd'];
+        indice = 0;
+
+        function adiciona(){
+            let t = $(`<p> Mais um paragráfo... ${p[indice++]} </p>`);
+            if (indice > 4){
+                return indice = 0;
+            }
+            $('#text').append(t);
+        }
+    </script>
+</head>
+
+<body>
+    <div id='text'> 
+        <p> Paragráfo... </p>    
+    </div>
+    <button onclick="adiciona()"> Click ME! </button>
+
+</body>
+
+</html>

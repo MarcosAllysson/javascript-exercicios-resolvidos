@@ -1,0 +1,40 @@
+<!-- 2. Acrescente à página anterior um elemento para que o usuário possa selecionar um número qualquer. 
+Quando o botão for clicado, deve ser carregado o conteúdo da URL http://numbersapi.com/N, 
+onde N é o número selecionado pelo usuário. -->
+
+<!DOCTYPE html>
+<html lang="pr-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Q2 </title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
+
+</head>
+
+<body>
+
+    <h1> Recebe Parâmetro </h1>
+
+    <p> Escolha um número:
+        <input type="number" name="num" id="num">
+    </p>
+    <div id="recebe"> </div>
+    <button onclick="carrega()"> CLick ME! </button>
+
+    <script>
+        let n1 = document.getElementById('num');
+        let num = Number(n1.value);
+
+        function carrega() {
+            $('#recebe').load('http://numbersapi.com/' + num);
+            console.log(num);
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+1. Escreva uma página com um div e um botão. Quando o botão for clicado, o conteúdo da URL http://numbersapi.com/8 deve ser carregado no div.
+
+2. Acrescente à página anterior um elemento para que o usuário possa selecionar um número qualquer. Quando o botão for clicado, deve ser carregado o conteúdo da URL http://numbersapi.com/N, onde N é o número selecionado pelo usuário.
+
+3. Modifique a página anterior para que, imediatamente após o botão ser clicado, seja exibido em algum lugar da tela o texto "Carregando...". Quando o conteúdo tiver terminado de ser carregado, esse texto deve mudar para "Pronto!";
+
+4. Modifique o código anterior para usar $.ajax(...) ao invés de load(...), sem alterar o funcionamento da página.

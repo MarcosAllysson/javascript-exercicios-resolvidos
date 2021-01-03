@@ -1,0 +1,59 @@
+<!-- 5. Dado o seguinte código HTML:
+<!DOCTYPE html>
+    <body>
+    <h1>Programação para Internet 1</h1>
+    <p>Este é o primeiro parágrafo</p>
+    <p>Este é o segundo parágrafo</p>
+    <span id="ref1"></span><p>Este parágrafo deve ser removido (1)</p>
+
+    <div id="conteudo" style="border: 1px solid blueviolet">
+        <p>Este parágrafo deve ser removido (2) <span id="ref2">!</span> </p>
+        <p>Último parágrafo</p>
+    </div>
+
+    <button>Remover 1</button>
+    <button>Remover 2</button>
+</body>
+</html>
+
+Faça com que ao clicar em cada botão, seja removido o parágrado correspondente indicado no texto. 
+Encontre os elementos a serem removidos partindo das tag com id ref1ou ref2. -->
+
+<!DOCTYPE html>
+<script>
+    function f1(){
+        let primeiro = document.getElementById('ref1');
+        primeiro.firstChild.nextSibling.remove();
+
+        // console.log('tag:', segundo.nodeName);    
+        // console.log('pai:', segundo.parentNode);
+        // console.log('primeiro filho:', segundo.firstChild);
+        // console.log('texto do primeiro filho:', segundo.firstChild.nodeValue);    
+        // console.log('segundo filho:', segundo.firstChild.nextSibling);
+    }
+    function f2(){
+        let segundo = document.getElementById('ref2');
+        segundo.parentNode.firstChild.remove();
+    }
+
+
+</script>
+
+<body>
+    <h1>Programação para Internet 1</h1>
+    <p>Este é o primeiro parágrafo</p>
+    <p>Este é o segundo parágrafo</p>
+    <span id="ref1">
+        <p>Este parágrafo deve ser removido (1)</p>
+    </span>
+
+    <div id="conteudo" style="border: 1px solid blueviolet">
+        <p>Este parágrafo deve ser removido (2) <span id="ref2">!</span> </p>
+        <p>Último parágrafo</p>
+    </div>
+
+    <button onclick="f1()">Remover 1</button>
+    <button onclick="f2()">Remover 2</button>
+</body>
+
+</html>

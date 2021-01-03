@@ -1,0 +1,85 @@
+<!-- 9. Acresente mais três botões ao código. Ao ser clicados, devem realizar as seguintes operações no elemento 
+de id titulo: (o código não deve criar novos elementos, apenas alterar o texto)
+
+    Acrescentar uma string ao final do texto
+    Acrescentar uma string ao início do texto
+    Limpar o texto -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head defer>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
+
+    <script>
+        function transform() {
+            $('p').on('click', function () {
+                $(this).css({
+                    'font-size': '40px',
+                    'margin-left': '200px',
+                    'margin-top': '50px',
+                    // 'transform': 'rotate(20deg)'
+                }), 'slow';
+            });
+        }
+    </script>
+
+    </script>
+
+    <!-- <script>
+        function transform2() {
+            $('p').on('click', function () {
+                $(this).css({
+                    'font-size': '40px',
+                    'margin-left': '200px',
+                    'margin-top': '50px',
+                    'transform': 'rotate(-20deg)',
+                    'background-color':'yellow',
+                    'color':'pink'
+                }), 'slow';
+            });
+        }
+    </script> -->
+
+    <script>
+        function adicionaC() {
+            let t = ' adicionado após chamada função...';
+            $('.titulo').append(t);
+        }
+    </script>
+
+    <script>
+        function adicionaF() {
+            let t = ' COMEÇO -> ';
+            $('.titulo').prepend(t);
+        }
+    </script>
+
+    <script>
+        function limpaT() {
+            $('.titulo').hide();
+        }
+    </script>
+</head>
+
+<body>
+    <h1> Q9 </h1>
+    <p class="titulo" onclick="transform()"> Texto qualquer </p>
+    <p class="titulo" onclick="transform()"> Texto qualquer </p>
+    <p class="titulo" onclick="transform()"> Texto qualquer </p>
+    <p class="titulo" onclick="transform()"> Texto qualquer </p>
+    <p class="titulo" onclick="transform()"> Texto qualquer </p>
+    <p class="titulo" onclick="transform()"> Texto qualquer </p>
+
+    <input type="button" value="String Final" onclick="adicionaC()">
+    <input type="button" value="String Início" onclick="adicionaF()">
+    <input type="button" value="String Limpa" onclick="limpaT()">
+
+</body>
+
+</html>

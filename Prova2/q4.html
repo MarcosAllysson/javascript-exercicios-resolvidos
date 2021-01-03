@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Questão 04 </title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
+</head>
+
+<body>
+    <!-- API LINK -------   https://xkcd.now.sh/?comic= -->
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxZllfCyxY6VPtkXiDCDBJs_klxvMhVNN29UZVEDNaMtKWNZXJsw&s"
+        alt="" id="image">
+    <p id="texto"> Texto... </p>
+    <input type="number" id="numero"> <button onclick="search()"> SEARCH </button>
+
+    <script>
+        function search() {
+            let n1 = document.getElementById('numero');
+            let num = Number(n1.value);
+            let erro = 'Erro...'
+
+            $.ajax({
+                type: 'GET',
+                url: `https://xkcd.now.sh/?comic=${num}`,
+                success: function (dados) {
+                    $('#image').attr('src', dados.img);
+                    $('#texto').text(dados.alt);
+                }, error: function () {
+                    $('#texto').text(erro);
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

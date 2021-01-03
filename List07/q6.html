@@ -1,0 +1,29 @@
+<!-- 6 Crie uma página contendo um campo de texto e um outro elemento de conteúdo qualquer (por exemplo, 
+uma tag <h1>). À medida que o usuário digitar qualquer conteúdo na caixa de texto, esse mesmo conteúdo 
+deve ser replicado em tempo real no outro elemento (utilize o evento onkeyup). -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Q6</title>
+
+    <script>
+        function live() {
+            let enviado = document.getElementById('textoenviado');
+            let recebido = document.getElementById("textorecebido");
+            recebido.value = enviado.value;
+        }
+    </script>
+</head>
+
+<body>
+    <h1> Conversando sozinho... </h1>
+    <p><textarea id="textoenviado" cols="30" rows="10" onkeyup="live()"></textarea></p> 
+    <p><textarea id="textorecebido" cols="30" rows="10" onkeydown="live()"></textarea></p> 
+</body>
+
+</html>

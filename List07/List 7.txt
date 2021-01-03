@@ -1,0 +1,57 @@
+1. Crie uma página HTML simples, que contenha em algum lugar um elemento (div, span ou p) com id="texto". Crie um botão que, ao ser clicado, mude o texto deste elemento.
+
+2. Crie um elemento HTML cujo texto seja modificado quando o cursor do mouse está sobre ele e volte ao texto original quando o cursor não estiver mais.
+
+3. Baseado no seguinte código HTML, faça com que, quando o botão for clicado, seja modificado:
+
+    O texto da da tag <h1>
+    O texto do span com id nomeaqui
+    O texto do segundo parágrafo
+    A url da imagem
+
+(Não modifique o código HTML, além do mínimo necessário para inserir as referências ao código Javascript).
+
+<!DOCTYPE html>
+<body>
+    <h1>Programação para Internet 1</h1>
+    <p>Bem vindo, <span id="nomeaqui"></span>!</p>
+    <p>Esse é o texto do segundo parágrafo</p>
+    <p><img id="imagem" src="https://upload.wikimedia.org/wikipedia/pt/4/4e/Goomba.png" style="width:120px"></p>
+    <button>Muda conteúdo</button>
+    </body>
+</html>
+
+4. Crie uma página HTML contendo um div e um botão. Faça com que, cada vez que o botão for criado, um novo parágrafo seja adicionado contendo um texto diferente. (Os possíveis textos podem vir, por exemplo, de um array, em que a cada clique é lido o próximo elemento do array).
+
+5. Dado o seguinte código HTML:
+
+<!DOCTYPE html>
+    <body>
+    <h1>Programação para Internet 1</h1>
+    <p>Este é o primeiro parágrafo</p>
+    <p>Este é o segundo parágrafo</p>
+    <span id="ref1"></span><p>Este parágrafo deve ser removido (1)</p>
+
+    <div id="conteudo" style="border: 1px solid blueviolet">
+        <p>Este parágrafo deve ser removido (2) <span id="ref2">!</span> </p>
+        <p>Último parágrafo</p>
+    </div>
+
+    <button>Remover 1</button>
+    <button>Remover 2</button>
+</body>
+</html>
+
+Faça com que ao clicar em cada botão, seja removido o parágrado correspondente indicado no texto. Encontre os elementos a serem removidos partindo das tag com id ref1ou ref2.
+
+6 Crie uma página contendo um campo de texto e um outro elemento de conteúdo qualquer (por exemplo, uma tag <h1>). À medida que o usuário digitar qualquer conteúdo na caixa de texto, esse mesmo conteúdo deve ser replicado em tempo real no outro elemento (utilize o evento onkeyup).
+
+7. Crie uma página contendo um grupo de checkboxes e um grupo de elementos radio. Faça com que algum elemento da tela seja modificado a cada clique em um dos elementos, de acordo com a opção (radio) ou opções (checkbox) selecionadas.
+
+8. Crie um parágrafo contendo um texto com algumas palavras em negrito (<strong>). Não utilize id nas tags. Quando o usuário passar o mouse por cima de qualquer lugar do parágrafo, todas as palavras em negrito devem mudar de cor. Quando o mouse sair do parágrafo, as palavras devem voltar ao normal.
+
+9. Crie uma página com um elemento de texto e dois botões. O primeiro, ao ser clicado, deve aumentar um pouco o tamanho do texto daquele elemento, e o segundo, diminuir.
+
+Dica: armazene o tamanho como uma variável numérica no escopo global e componha a propriedade CSS acrescentando "px" a esse número (exemplo: "12px").
+
+10. Faça uma página contendo ao menos 3 seções, cada uma contendo algum conteúdo diferente, sendo que apenas uma seção é exibida por vez. Crie um elemento com o nome de cada seção. Quando cada nome for clicado, a seção correspondente deve ser exibida, e as demais, ocultadas.

@@ -1,0 +1,70 @@
+<!-- 7. Crie uma página contendo um grupo de checkboxes e um grupo de elementos radio. Faça com que 
+algum elemento da tela seja modificado a cada clique em um dos elementos, de acordo com a opção 
+(radio) ou opções (checkbox) selecionadas. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Q7</title>
+
+    <script>
+        function muda() {
+            let p1 = document.getElementById('p1');
+            let p2 = document.getElementById('p2');
+            let p3 = document.getElementById('p3');
+
+            let p4 = document.getElementById('p4');
+            let p5 = document.getElementById('p5');
+            let p6 = document.getElementById('p6');
+
+            if (p1) {
+                window.alert('asda');
+                // document.body.style.background = 'Black';
+            }
+            if (p2) {
+                console.log('asdasd');
+            }
+            if (p3) {
+                console.log('asdasdasdasd');
+            }
+            if (p4) {
+                console.log('asdasdasdasd');
+            }
+            if (p5) {
+                console.log('asdasdasdasd');
+            }
+            if (p6) {
+                console.log('asdasdasdasd');
+            }
+
+        }
+    </script>
+</head>
+
+<body id="back">
+    <h1> Q7 </h1>
+
+    <form action="" target="" method="">
+        <p> Sexo </p>
+        <input type="radio" name="sexo" id="p1" value="macho" onclick="muda()"> Macho
+        <input type="radio" name="sexo" id="p2" value="femea"> Fêmea
+        <input type="radio" name="sexo" id="p3" value="naosabe"> Não sabe
+
+
+        <p> Time </p>
+        <input type="checkbox" name="time" id="p4" value="barca"> Barça
+        <input type="checkbox" name="time" id="p5" value="real"> Real
+        <input type="checkbox" name="time" id="p6" value="boavista"> Boa Vista
+        <!-- <p><input type="submit" value="Submit"></p> -->
+    </form>
+    <!-- <h3>Result:</h3>
+    <iframe name="result2" style="height:100px;width:200px;"></iframe> -->
+
+
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+1. Usando a sintaxe tradicional de construtor e protótipo, crie um construtor chamado Ponto(x,y) que represente um ponto no espaço, com um método distancia no protótipo que calcule a distância cartesiana deste até outro ponto
+
+    Distância entre os pontos (x1​,y1​) e (x2​,y2​):​ [This is the rendered form of the equation. You can not edit this directly. Right click will give you the option to save the image, and in most browsers you can drag the image onto your desktop or another program.]
+    Use Math.sqrt para calcular a raiz quadrada.
+
+Exemplo:
+
+let p1 = new Ponto(3, 4);
+let p2 = new Ponto(5, 6);
+console.log(p1.distancia(p2));
+
+Saída esperada:
+
+2.8284271247461903
+
+2. Modifique o código anterior para utilizar a nova sintaxe de classe do ES2015, de modo que o código de exemplo dado continue funcionando igualmente.
+
+3. Escreva a classe Poligonal, com o método adiciona que acrescenta objetos Ponto a um array interno, e o método comprimento, que retorna a soma dos comprimentos de todos os segmentos de reta formados.
+
+Exemplo:
+
+let poli = new Poligonal();
+poli.adiciona(new Ponto(1,1));
+poli.adiciona(new Ponto(2,4));
+poli.adiciona(new Ponto(5,6));
+poli.adiciona(new Ponto(4,1));
+poli.adiciona(new Ponto(8,2));
+console.log(poli);
+console.log(poli.comprimento());
+
+Saída esperada:
+
+Poligonal {
+pontos:
+[ Ponto { x: 1, y: 1 },
+    Ponto { x: 2, y: 4 },
+    Ponto { x: 5, y: 6 },
+    Ponto { x: 4, y: 1 },
+    Ponto { x: 8, y: 2 } ] }
+15.989954074842814
+
+4. Crie a classe Livro e uma subclasse EBook de modo que o exemplo abaixo produza o resultado demonstrado.
+
+(O método obterDescricao deve ser definido apenas em Livro e o construtor de EBook deve usar super para chamar o construtor de sua superclasse.
+
+Exemplo:
+
+let dom = new Livro('Dom Casmurro', 'Machado de Assis', 256);
+let hp = new EBook('Harry Potter e a Pedra Filosofal', 'J. K. Rowling', 309, 420);
+console.log(dom.obterDescricao());
+console.log(hp.obterDescricao());
+console.log(hp.obterTamanho());
+
+Saída esperada:
+
+"Dom Casmurro", autor: Machado de Assis, 256 páginas
+"Harry Potter e a Pedra Filosofal", autor: J. K. Rowling, 309 páginas
+420.kb
+
+5. Escreva classes chamadas TrianguloEq (equilátero) e Quadradoque recebam no construtor um parâmetro para o tamanho do lado e tenham métodos chamadas area e perimetro que retornem os valores corretos.
+
+    Área do triângulo equilátero: [This is the rendered form of the equation. You can not edit this directly. Right click will give you the option to save the image, and in most browsers you can drag the image onto your desktop or another program.] 
+
+Exemplo:
+
+let t = new TrianguloEq(10);
+console.log(t.perimetro(), t.area());
+
+let q = new Quadrado(10);
+console.log(q.perimetro(), q.area());
+
+Saída esperada:
+
+30 43.30127018922193
+40 100
+
+6. Crie uma classe Forma e transforme Quadrado e TrianguloEq em suas subclasses. Acrescente o método toString a Forma de modo que o seguinte código:
+
+let formas = [ new Quadrado(5), new Quadrado(10),
+               new TrianguloEq(5), new TrianguloEq(10) ];
+for(forma of formas){
+    console.log(`${forma.constructor.name}: ${forma.toString()}`);
+}
+
+Resulte em:
+
+Quadrado: p=20, a=25
+Quadrado: p=40, a=100
+TrianguloEq: p=15, a=10.825317547305483
+TrianguloEq: p=30, a=43.30127018922193
+
+7. Transforme os métodos area e perimetro das classes anteriores em chamadas get e faça as modificações correspondentes. Ao menos para Quadrado, escreva também chamadas as chamadas setcorrespondentes.
+
+Exemplo:
+
+let q = new Quadrado(5);
+console.log(q.toString());
+
+q.perimetro = 32;
+console.log(q.toString());
+
+q.area = 100;
+console.log(q.toString());
+
+Saída esperada:
+
+p=20, a=25
+p=32, a=64
+p=40, a=100
+
+8. Escreva uma função chamada mediaAreas que receba qualquer número de parâmetros contendo formas e retorna e média aritmética das respectivas áreas.
+
+Exemplo:
+
+console.log( mediaAreas(
+    new Quadrado(10), new TrianguloEq(10), new Quadrado(5)
+));
+
+Saída esperada:
+
+56.10042339640731
+
+9. Escreva uma função chamada ordenaPorArea que receba um único parâmetro contendo um array de formas e o ordene por ordem crescente de área (use o método sort no array).
+
+Exemplo:
+
+let formas = [new Quadrado(10), new TrianguloEq(10), new Quadrado(5), new TrianguloEq(7)];
+ordenaPorArea(formas);
+console.log(formas);
+
+Saída esperada:
+
+[ TrianguloEq { lado: 7 },
+Quadrado { lado: 5 },
+TrianguloEq { lado: 10 },
+Quadrado { lado: 10 } ]

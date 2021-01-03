@@ -1,0 +1,28 @@
+<!-- 1. Escreva uma página com um div e um botão. Quando o botão for clicado, o conteúdo da URL 
+http://numbersapi.com/8 deve ser carregado no div. -->
+
+<!DOCTYPE html>
+<html lang="pr-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Q1 </title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
+
+    <script>
+        function carrega(){
+            $('#recebe').load('http://numbersapi.com/8');
+        }
+    </script>
+</head>
+
+<body>
+    
+    <h1> Recebe Parâmetro </h1>
+    <div id="recebe">  </div>
+    <button onclick="carrega()"> CLick ME! </button>
+
+</body>
+</html>

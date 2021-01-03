@@ -1,0 +1,27 @@
+<!-- 1. Crie uma página HTML simples, que contenha em algum lugar um elemento (div, span ou p) 
+com id="texto". Crie um botão que, ao ser clicado, mude o texto deste elemento. -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Questão 1</title>
+</head>
+
+<script>
+    function mudaText(e) {
+        let t = document.getElementById('texto');
+        t.innerText = document.write('texto mudado');
+    }
+</script>
+</head>
+
+<body>
+    <p id="texto"> </p>
+    <button onclick="mudaText(event)"> Mudar texto </button>
+</body>
+
+</html>

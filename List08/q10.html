@@ -1,0 +1,101 @@
+<!-- 10. Dado o código HTML abaixo:
+
+<html>
+    <style>
+        div {
+            position: absolute; padding: 0.5em;
+            border: 1px solid#383838;            
+            width: 200px; height: 100px; top: 20px;
+        }
+        #d1 { left: 20px; background-color:#cae7ca;  }
+        #d2 { left: 240px; background-color:#e5e7ca; }
+        #d3 { left: 460px; background-color:#cae0e7; }
+        #d4 { left: 680px; background-color:#e1cae7; }
+    </style>
+    <body>
+        <div id="d1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+        <div id="d2">Donec eu nisi in lectus tempus dignissim non quis lorem.</div>
+        <div id="d3">Duis ex nibh, imperdiet a massa quis, blandit gravida lectus.</div>
+        <div id="d4">Pellentesque mauris mauris, congue id ante id, ullamcorper finibus tortor.</div>
+    </body>
+</html> 
+Faça com que algo diferente aconteça com cada div ao ser clicado, incluindo:
+
+    Aumentar o tamanho (largura ou altura)
+    Mudar de posição para um valor fixo
+    Mudar para o mesmo tamanho (largura ou altura) de outro div
+    Posicionar-se ao lado de outro div -->
+
+
+
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Q10 </title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
+
+    <script>
+        function algo() {
+            $('#d1').animate({
+                'margin-left': '+=200px',
+                'border-width': '+=2em',
+                'align': 'center',
+                'margin-top': '300px'
+
+            }, 'fast');
+        }
+    </script>
+
+    <script>
+        function algo2() {
+            $('#d4').animate({
+                'margin-left': '-=200px',
+                'border-width': '+=2em',
+                'align': 'center',
+                'margin-top': '300px'
+
+            }, 'fast');
+        }
+    </script>
+</head>
+<html>
+<style>
+    div {
+        position: absolute;
+        padding: 0.5em;
+        border: 1px solid#383838;
+        width: 200px;
+        height: 100px;
+        top: 20px;
+    }
+
+    #d1 { left: 20px; background-color: #cae7ca; }
+
+    #d2 {
+        left: 240px;
+        background-color: #e5e7ca;
+    }
+
+    #d3 {
+        left: 460px;
+        background-color: #cae0e7;
+    }
+
+    #d4 {
+        left: 680px;
+        background-color: #e1cae7;
+    }
+</style>
+
+<body>
+    <div id="d1" onclick="algo()">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+    <div id="d2" onclick="algo()">Donec eu nisi in lectus tempus dignissim non quis lorem.</div>
+    <div id="d3" onclick="algo()">Duis ex nibh, imperdiet a massa quis, blandit gravida lectus.</div>
+    <div id="d4" onclick="algo2()">Pellentesque mauris mauris, congue id ante id, ullamcorper finibus tortor.</div>
+</body>
+
+</html>

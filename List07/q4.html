@@ -1,0 +1,30 @@
+<!-- 4. Crie uma página HTML contendo um div e um botão. Faça com que, cada vez que o botão for clicado, 
+um novo parágrafo seja adicionado contendo um texto diferente. (Os possíveis textos podem vir, por 
+exemplo, de um array, em que a cada clique é lido o próximo elemento do array). -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Q4</title>
+
+    <script>
+        function text() {
+            let t = document.createElement('t');
+            t.innerHTML = "A new text was added <br>";
+
+            let div = document.getElementById('text');
+            div.appendChild(t);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="text">  </div>
+    <button onclick="text()"> Click Me! </button>
+</body>
+
+</html>

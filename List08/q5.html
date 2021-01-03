@@ -1,0 +1,40 @@
+<!-- 5. Adicione alguns elementos <span> no meio dos parágrafos da página anterior. Crie uma nova classe CSS 
+    chamada destaque com algumas propriedades visuais (por exemplo, cor de plano de fundo). Adicione um 
+    botão à página anterior que, ao ser clicado, aplique essa classe a todos os elementos span. -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Questão5 </title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
+    
+        
+    <script>
+        function mudaCor() {
+            $('.destaque').css({
+                'background-color': 'aqua',
+                'color': 'green'
+            });
+        }
+    </script>
+    
+</head>
+
+<body>
+    <h1> Q5 </h1>
+    <p> <span class="destaque"> Parágrafo 1 </span> </p>
+    <p> <span class="destaque"> Parágrafo 2 </span> </p>
+    <p> <span class="destaque"> Parágrafo 3 </span> </p>
+    <p> <span class="destaque"> Parágrafo 4 </span> </p>
+    <p> <span class="destaque"> Parágrafo 5 </span> </p>
+
+    <button onclick="mudaCor()"> Click ME! </button>
+
+</body>
+
+</html>

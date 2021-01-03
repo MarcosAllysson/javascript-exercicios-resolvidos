@@ -1,0 +1,51 @@
+<!-- Para as questões seguintes, use a API documentada em https://reqres.in/ -->
+<!-- 3. Crie um formulário com campos para nome e profissão e um botão. Quando o botão for clicado, 
+deve ser enviada uma requisição para a criação desse usuário (referência: CREATE). Após a 
+criação, deve ser informado ao usuário o ID do usuário recém-criado, assim como a confirmação 
+do nome e profissão, tais como recebidos do servidor. -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Q3 </title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
+</head>
+
+
+<body>
+    <h1> Q3 </h1>    
+    <p> <label for="nome"> Nome: </label> <input type="text" id="nome"> </p>
+    <p> <label for="profisso"> Profissão: </label> <input type="text" id="profisso"> </p>
+    <div id="status"></div>
+    <button> Requisitar </button>
+
+    <script>
+        let nome = document.querySelector('input#nome');
+        let profisso = document.querySelector('input#profissao');
+        let str = `{
+            "nome":"${nome}",
+            "profissao":"${profisso}"
+            }`;
+
+        let obj = JSON.parse(str);
+        
+        $('button').on("click", function(){
+            $.ajax({
+                type:'POST',
+                url:'https://reqres.in/api/users/',
+                data: {
+                    str
+                },
+                success: function(dados) {
+                    $('div#status').text('Tudo certo! Usuário cadastrado.');
+                }, error: function(dados){
+                    $('div#status').text('url não encontrada');
+                }
+            });
+        })
+    </script>
+</body>
+</html>

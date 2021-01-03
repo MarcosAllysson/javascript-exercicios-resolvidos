@@ -1,0 +1,44 @@
+<!-- 7. Escreva um serviço POST que receba um objeto JSON contendo um parâmetro que indica o tamanho 
+do lado de um quadrado e retorne outro JSON contendo o valor da área e perímetro.
+Por exemplo ao enviar um POST para http://localhost:3000/quadrado com o seguinte JSON:
+{
+    "lado": 50
+}
+Deve ser retornada a resposta:
+{
+    "area": 2500,
+    "perimetro": 200
+}
+Teste a requisição com o Postman usando diferentes valores. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Q1 </title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
+</head>
+
+<body>
+    <div id="res"></div>
+
+    <script>
+        $.ajax({
+            type: 'POST',
+            url: 'http://localhost:3000/questao7',
+            data: JSON.stringify(
+                {
+                    "lado": 4
+                }
+            ), contentType: 'application/json',
+            success: d => {
+               $('#res').text('dados enviado ao servidor...');
+            }
+        });    
+    </script>
+</body>
+
+</html>

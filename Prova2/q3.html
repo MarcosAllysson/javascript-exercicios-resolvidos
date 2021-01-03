@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Questão 3 </title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
+
+    <style>
+        #image {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPb6QF-p6SGQ1287ZVZjpn4ZXlXRTWK-lKzCG2_J5qAXblMwSZBw&s"
+            id="image">
+    </div>
+    <button onclick="show()"> CLICK ME! </button>
+
+    <script>
+        function show() {
+            $('#image').slideDown('slow', function () {
+                $('#image').animate({
+                        'margin-left': '1050px',
+                    }, 'slow'
+                );
+                $('#image').animate({
+                        'margin-top': '400px',
+                    }, 'slow'
+                );
+                $('#image').animate({
+                        'margin-left': '0px',
+                    }, 'slow'
+                );
+                $('#image').animate({
+                        'margin-top': '0px',
+                    }, 'slow'
+                );
+            });
+        }
+    </script>
+</body>
+
+</html>

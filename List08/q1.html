@@ -1,0 +1,47 @@
+<!-- 3. Baseado no seguinte código HTML, faça com que, quando o botão for clicado, seja modificado:
+
+    O texto da da tag <h1>
+    O texto do span com id nomeaqui
+    O texto do segundo parágrafo
+    A url da imagem
+
+(Não modifique o código HTML, além do mínimo necessário para inserir as referências ao código Javascript).
+
+<!DOCTYPE html>
+<body>
+    <h1>Programação para Internet 1</h1>
+    <p>Bem vindo, <span id="nomeaqui"></span>!</p>
+    <p>Esse é o texto do segundo parágrafo</p>
+    <p><img id="imagem" src="https://upload.wikimedia.org/wikipedia/pt/4/4e/Goomba.png" style="width:120px"></p>
+    <button>Muda conteúdo</button>
+    </body>
+</html> -->
+
+<!DOCTYPE html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
+
+    <script>
+        function mudaTudo() {
+            $('#titulo').eq(0).html('<h1> Programação para Internet XXX </h1>');
+
+            let novo = $('<p> aula de JQuery </p>');
+            $('#nomeaqui').append(novo);
+
+            $('p').eq(2).html('"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."');
+
+            $('#imagem').attr('src', 'https://image.shutterstock.com/image-photo/horizontal-portrait-optimistic-funny-girl-260nw-662169580.jpg');
+        }
+    </script>
+</head>
+
+<body>
+    <h1 id="titulo">Programação para Internet 1</h1>
+    <p>Bem vindo, <span id="nomeaqui"></span>!</p>
+    <p>Esse é o texto do segundo parágrafo</p>
+    <p><img id="imagem" src="https://upload.wikimedia.org/wikipedia/pt/4/4e/Goomba.png" style="width:120px"></p>
+    <button onclick="mudaTudo()">Muda conteúdo</button>
+</body>
+
+</html>

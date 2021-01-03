@@ -1,0 +1,41 @@
+<!-- 8. Crie uma página com um elemento de texto qualquer identificado por um id e que, ao ser clicados, realizem 
+os seguintes efeitos neste elemento como animações graduais:
+
+    Aumente o tamanho da fonte e o valor da margem esquerda (para valores fixos)
+    Aumente em 50 pixels a margem superior -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head defer>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
+
+    <script>
+        function transform(){
+            $('p').on('click', function(){
+                $(this).animate({
+                    'font-size':'40px',
+                    'margin-left':'200px',
+                    'margin-top':'50px'
+                }), 'slow';
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <h1> Q8 </h1>
+    <p id="id1" onclick="transform()"> Texto qualquer </p>
+    <p id="id2" onclick="transform()"> Texto qualquer </p>
+    <p id="id3" onclick="transform()"> Texto qualquer </p>
+    <p id="id4" onclick="transform()"> Texto qualquer </p>
+    <p id="id5" onclick="transform()"> Texto qualquer </p>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Questão 1 </title>
+
+    <style>
+        h1{
+            text-align: center;
+        }
+        div{
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        function on() {
+            // BLUE SKY https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPb6QF-p6SGQ1287ZVZjpn4ZXlXRTWK-lKzCG2_J5qAXblMwSZBw&s
+            // DARK SKY https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxZllfCyxY6VPtkXiDCDBJs_klxvMhVNN29UZVEDNaMtKWNZXJsw&s
+            let image = document.getElementById('image').src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxZllfCyxY6VPtkXiDCDBJs_klxvMhVNN29UZVEDNaMtKWNZXJsw&s";            
+        }
+
+        function off() {
+            let image = document.getElementById('image').src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPb6QF-p6SGQ1287ZVZjpn4ZXlXRTWK-lKzCG2_J5qAXblMwSZBw&s"
+        }
+    </script>
+</head>
+
+<body>
+    <h1> Passe o mouse sobre a imagem </h1>
+    <div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPb6QF-p6SGQ1287ZVZjpn4ZXlXRTWK-lKzCG2_J5qAXblMwSZBw&s"
+            onmouseover="on()" onmouseout="off()" id="image">
+    </div>
+</body>
+
+</html>

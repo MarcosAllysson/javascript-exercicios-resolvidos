@@ -1,0 +1,77 @@
+<!-- Para as questões seguintes, use a API documentada em https://reqres.in/ -->
+<!-- 2. Modifique o código acima para, caso não seja encontrado um usuário com aquele id, 
+seja exibida uma mensagem de erro. Teste a página com valores acima de 13 para ver o erro. -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Q2 </title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
+</head>
+
+<body>
+
+    <h1> Q2 </h1>
+    <p>
+        <label for="email"> E-mail </label>
+        <div id="email"></div>
+    </p>
+
+    <p>
+        <label for="primeiro"> Primeiro Nome </label>
+        <div id="primeiro"></div>
+    </p>
+
+    <p>
+        <label for="ultimo"> Último Nome </label>
+        <div id="ultimo"></div>
+    </p>
+
+    <p>
+        <label for="avatar"> Avatar </label>
+        <img src="" alt="" srcset="" id="img">
+    </p>
+
+    <p>
+        <label for="msg">  </label>
+        <div id="msg"></div>
+        <p></p>
+    </p>
+
+    <p>
+        <label for="numero"> Insira um número: </label>
+        <input type="number" id="numero">
+    </p>
+    
+    <button> Buscar </button>
+    
+
+    <script>
+        let numero = document.querySelector('input#numero');
+        let numeroRecebido = Number(numero.value);
+        
+        $('button').on("click", function(){
+            $.ajax({
+                type:'GET',
+                url:'https://reqres.in/api/users/' + numeroRecebido,
+                
+                success: function(dados) {
+                    $('div#email').text(dados.data.email);
+                    $('div#primeiro').text(dados.data.first_name);
+                    $('div#ultimo').text(dados.data.last_name);
+                    $('img#img').attr('src', dados.data.avatar);
+                }, error: function(dados){
+                    $('div#msg').text('url não encontrada');
+                }
+            });
+        })
+        
+    </script>
+
+</body>
+
+</html>

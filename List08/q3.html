@@ -1,0 +1,54 @@
+<!-- 5. Dado o seguinte código HTML:
+<!DOCTYPE html>
+    <body>
+    <h1>Programação para Internet 1</h1>
+    <p>Este é o primeiro parágrafo</p>
+    <p>Este é o segundo parágrafo</p>
+    <span id="ref1"></span><p>Este parágrafo deve ser removido (1)</p>
+
+    <div id="conteudo" style="border: 1px solid blueviolet">
+        <p>Este parágrafo deve ser removido (2) <span id="ref2">!</span> </p>
+        <p>Último parágrafo</p>
+    </div>
+
+    <button>Remover 1</button>
+    <button>Remover 2</button>
+</body>
+</html>
+
+Faça com que ao clicar em cada botão, seja removido o parágrado correspondente indicado no texto. Encontre os 
+elementos a serem removidos partindo das tag com id ref1ou ref2. -->
+
+<!DOCTYPE html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
+
+    <script>
+        function remove() {
+            $('p').remove(":contains('Este parágrafo deve ser removido (1)')"); 
+        }
+
+        function remove2() {
+            $('p').remove(":contains('Este parágrafo deve ser removido (2)')");
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Programação para Internet 1</h1>
+    <p>Este é o primeiro parágrafo</p>
+    <p>Este é o segundo parágrafo</p>
+    <span id="ref1"></span>
+    <p>Este parágrafo deve ser removido (1)</p>
+
+    <div id="conteudo" style="border: 1px solid blueviolet">
+        <p>Este parágrafo deve ser removido (2) <span id="ref2">!</span> </p>
+        <p>Último parágrafo</p>
+    </div>
+
+    <button onclick="remove()">Remover 1</button>
+    <button onclick="remove2()">Remover 2</button>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+1. [0,6 ponto] Escreva um loop for que escreva os números de 10 a 1, em ordem inversa. (Saída esperada: 10 9 8 7 6 5 4 3 2 1).
+
+2. [1,2 ponto] Escreva uma função chamada soma que receba como único parâmetro um array contendo números e retorne a soma total destes. A função deve funcionar para arrays de qualquer tamanho.
+
+Por exemplo: soma([3, 10, 2]) deve retornar o valor 15.
+
+3. [1,2 ponto] Escreva uma função chamada geraTag que receba como único parâmetro um objeto contendo as propriedades url, altura e largura e retorne uma string com a tag HTML para imagem correspondente.
+
+Por exemplo: para o objeto passado como parâmetro:
+
+{ 
+    url: 'ifb.png', 
+    altura: 200, 
+    largura: 100 
+}
+
+deve ser retornada a string:
+
+<img src="ifb.png" width="200" height="100">
+
+4. [1 ponto] Dado o array de objetos:
+
+let imagens = [
+    { url: 'ifb.png', altura: 200, largura: 100  },
+    { url: 'cbra.png', altura: 20, largura: 50  },
+    { url: 'tsi.png', altura: 150, largura: 40  }
+];
+
+Usando forEach, escreva na tela a área total ocupada por cada uma das imagens.
+
+A saída deve ser:
+
+20000
+1000
+6000
+
+5. [1 ponto] A partir do mesmo array da questão anterior, use map para gerar um array chamado areas, de modo que:
+
+console.log(areas);
+
+Resulte em:
+
+[ 20000, 1000, 6000 ]
+
+6. [1,8 ponto] Dada a seguinte função:
+
+function criaObjeto(n, funcao){
+    return {
+        numero: n,
+        resultado: funcao(n)
+    }
+}
+
+Sem modificar o código da função acima, escreva duas chamadas a ela, com os parâmetros apropriados, atribuindo os resultados a novas variáveis chamadas obj1 e obj2, de modo que o código:
+
+console.log(obj1);
+console.log(obj2);
+
+Resulte em:
+
+{ numero: 10, resultado: 20 }
+{ numero: 4, resultado: 16 }
+
+7. [1,2 pontos] Crie uma classe chamada Ator, com um construtor que recebe um único argumento para o seu nome, e um método obterNome() que retorna esse nome.
+
+Por exemplo, o código:
+
+let uma = new Ator('Uma Thurman');
+console.log(uma.obtemNome());
+
+Deve escrever na tela Uma Thurman.
+
+8. [2 pontos] Usando o código da questão anterior, crie uma classe Filme, cujo construtor receba 3 parâmetros que especificam propriedades internas: título (string), diretor (string) e atores (array de objetos Ator).
+
+Crie um método adicionaAtor(ator) que acrescenta um objeto dado ao array interno de atores, e um método escreveDescricao() que escreve na tela uma listagem como a do exemplo abaixo.
+
+Por exemplo, o código:
+
+let uma = new Ator('Uma Thurman');
+let pulp = new Filme(
+    'Pulp Fiction', 'Quentin Tarantino', [ uma, new Ator('John Travolta') ]
+);
+pulp.adicionaAtor(new Ator('Samuel L. Jackson'));
+
+pulp.escreveDescricao();
+
+Deve resultar em algo como:
+
+"Pulp Fiction", diretor: Quentin Tarantino
+Elenco:
+- Uma Thurman
+- John Travolta
+- Samuel L. Jackson

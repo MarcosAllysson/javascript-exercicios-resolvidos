@@ -1,0 +1,54 @@
+<!-- 2. Escreva uma página HTML com dois botões e um div, inicialmente vazio. Faça com 
+que cada botão, ao ser clicado, envie uma requisição Ajax para um dos endereços do 
+seu servidor e escreva no div a mensagem correspondente. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Q2 </title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
+</head>
+
+<body>
+    <div id="resposta"> </div>
+    <button id="b1"> Botão 1 </button>
+    <button id="b2"> Botão 2 </button>
+
+    <script>
+        let b1 = document.querySelector('button#b1');
+        let b2 = document.querySelector('button#b2');
+
+        $('#b1').on("click", function () {
+            $.ajax({
+                type: 'GET',
+                url: 'http://localhost:3000/',
+                success: function (dados) {
+                    $('div#resposta').text(dados);
+                }, error: function (dados) {
+                    $('div#resposta').text('Erro ao tentar realizar a operação.');
+                }
+            });
+        })
+
+        $('#b2').on("click", function () {
+            $.ajax({
+                type: 'GET',
+                url: 'http://localhost:3000/seunome',
+                success: function (dados) {
+                    $('div#resposta').text(dados);
+                }, error: function (dados) {
+                    $('div#resposta').text('Erro ao tentar realizar a operação.');
+                }
+            });
+        })
+
+    </script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!-- 4. Modifique o código anterior para usar $.ajax(...) ao invés de load(...), sem alterar 
+o funcionamento da página. -->
+
+<!DOCTYPE html>
+<html lang="pr-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Q4 </title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
+
+</head>
+
+<body>
+
+    <h1> Recebe Parâmetro </h1>
+
+    <p> Escolha um número:
+        <input type="number" name="num" id="num">
+    </p>
+    <div id="recebe"> </div>
+
+    <button onclick="carrega()"> CLick ME! </button>
+
+    <footer id="res"> </footer>
+
+    <script>
+        let n1 = document.getElementById('num');
+        let num = Number(n1.value);
+
+        console.log(num);
+        function carrega() {
+            let carregando = 'Carregando dados...';
+            let pronto = 'Pronto...';
+            let erro = 'Erro...'
+
+            $('#res').text(carregando);
+            
+            $.ajax({
+                type: 'GET',
+                url: `http://numbersapi.com/` + num,
+                success: function (dados) {
+                    // Faz alguma coisa com dados
+                    $('#recebe').append(dados);
+                    $('#res').text(pronto);
+                }, error: function () {
+                    // Faz alguma coisa com dados
+                    $('#recebe').text(erro);
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>

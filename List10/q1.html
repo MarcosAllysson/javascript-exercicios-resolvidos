@@ -1,0 +1,75 @@
+<!-- Para as questões seguintes, use a API documentada em https://reqres.in/ -->
+<!-- 1. Crie uma página com elementos vazios para:
+    Email
+    Primeiro nome
+    Último nome
+    Avatar (imagem)
+Crie um elemento que permita selecionar um número e um botão. Ao ser pressionado, o usuário deve 
+buscar os dados do usuário com aquele id (referência: SINGLE USER) e preencher os campos acima.
+Dica: Para mudar a URL de uma imagem, use o método .attr('src', novaurl) -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Q1 </title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
+</head>
+
+<body>
+
+    <h1> Q1 </h1>
+    <p>
+        <label for="email"> E-mail </label>
+        <div id="email"></div>
+    </p>
+
+    <p>
+        <label for="primeiro"> Primeiro Nome </label>
+        <div id="primeiro">  </div>
+    </p>
+
+    <p>
+        <label for="ultimo"> Último Nome </label>
+        <div id="ultimo">  </div>
+    </p>
+
+    <p>
+        <label for="avatar"> Avatar </label>
+        <img src="" alt="" srcset="" id="img">
+    </p>
+
+    <p>
+        <label for="numero"> Insira um número: </label>
+        <input type="number" id="numero">
+    </p>
+    
+    <button> Buscar </button>
+    
+
+    <script>
+        let numero = document.querySelector('input#numero');
+        let numeroRecebido = Number(numero.value);
+        
+        $('button').on("click", function(){
+            $.ajax({
+                type:'GET',
+                url:'https://reqres.in/api/users/' + numeroRecebido,
+                
+                success: function(dados) {
+                    $('div#email').append(dados.data.email)
+                    $('div#primeiro').append(dados.data.first_name);
+                    $('div#ultimo').append(dados.data.last_name);
+                    $('img#img').attr('src', dados.data.avatar);
+                },
+            });
+        })
+        
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!-- 3. Acrescente ao seu servidor web uma URL que retorna um texto contendo as informações enviadas 
+por user-agent do cliente.
+
+Por exemplo, a mesma URL, acessada pelo navegador ou pelo Postman, pode resultar em um dos seguintes textos:
+
+    Você está acessando como: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:70.0) Gecko/20100101 Firefox/70.0
+    Você está acessando como: PostmanRuntime/7.19.0 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Q3 </title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
+</head>
+
+<body>
+    <div id="resposta"> User-Agent: </div>
+    <button id="b2"> Req </button>
+
+    <script>
+        let b2 = document.querySelector('button#b2');
+
+        $('button#b2').on("click", function () {
+            $.ajax({
+                type: 'GET',
+                url: 'http://localhost:3000/user',
+                success: function (dados) {
+                    $('div#resposta').text(dados);
+                }, error: function (dados) {
+                    $('div#resposta').text('Erro ao tentar realizar a operação.');
+                }
+            });
+        })
+    </script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

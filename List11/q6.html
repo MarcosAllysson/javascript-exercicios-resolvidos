@@ -1,0 +1,44 @@
+<!-- 6. Escreva uma página HTML com controles que permitam o usuário digitar uma temperatura 
+em Fahrenheit e um botão que, ao ser clicado, consulte o serviço da questão anterior e 
+escreva na tela o resultado nas três escalas retornadas. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Q1 </title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
+</head>
+
+<body>
+    Fahrenheit <input type="text" id="fah">
+    <div id="resposta"> </div>
+    <div id="resposta2"> </div>
+    <div id="resposta3"> </div>
+    <button id="button"> Consultar </button>
+
+    <script>
+        $('#button').on("click", function () {
+            let numero2 = $('#fah').val();
+            
+            $.ajax({
+                type: 'GET',
+                url: `http://localhost:3000/questao5/${numero2}`,
+                contentType: 'application/json',
+                success: function (dados) {
+
+                    $('div#resposta').text(dados.fahrenheit);
+                    $('div#resposta2').text(dados.celcius);
+                    $('div#resposta3').text(dados.kelvin);
+                }, error: function (dados) {
+                    $('div#resposta').text('Erro ao tentar realizar a operação.');
+                }
+            });
+        })
+    </script>
+</body>
+
+</html>

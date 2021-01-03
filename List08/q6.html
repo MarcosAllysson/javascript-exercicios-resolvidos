@@ -1,0 +1,44 @@
+<!-- 6. Ainda na mesma página, faça com que cada parágrafo despareça ao ser clicado. Adicione mais um 
+botão à página. Quando esse botão for clicado, todos os parágrafos devem aparecer novamente. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Q6 </title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"> </script>
+
+    <script>
+        function makeMagic() {
+            $('#show').on('click', function () {
+                $('p').show();
+            });
+        }
+    </script>
+
+    <script>
+        function clickme() {
+            $('p').on('click', function () {
+                $(this).hide();
+            });
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1> Q6 </h1>
+    <p onclick="clickme()" id="p1"> Parágrafo 1 </p>
+    <p onclick="clickme()" id="p2"> Parágrafo 2 </p>
+    <p onclick="clickme()" id="p3"> Parágrafo 3 </p>
+    <p onclick="clickme()" id="p4"> Parágrafo 4 </p>
+    <p onclick="clickme()" id="p5"> Parágrafo 5 </p>
+
+    <button onclick="makeMagic()" id="show"> Make Magic! </button>
+</body>
+
+</html>
