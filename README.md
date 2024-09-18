@@ -1,14 +1,14 @@
-# JavaScript - Exercícios Resolvidos
+# JavaScript - Solved Exercises
 
-- Vários exercícios resolvidos com a linguagem JavaScript
-- Objetivo é servir como material de estudo e aprendizado
+- Several solved exercises with the JavaScript language
+- The objective is to serve as study and learning material
 
+## Some Topics Covered in Java:
 
-## Alguns Tópicos Abordados em Java:
-- Conceitos de programação em JavaScript;
-- Matriz;
-- Vetor;
-- Recursividade;
+- Programming concepts in JavaScript;
+- Matrix;
+- Vector;
+- Recursion;
 - Array;
-- Estruturas condicionais;
-- Listas de exercícios.
+- Conditional structures;
+- Exercise lists.
